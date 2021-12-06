@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "order",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "orders",
+      "dominant": true
+    },
+    "products": {
+      "collection": "product"
+    },
+    "complete": {
+      "type": "boolean"
+    },
+    "totalSum": {
+      "type": "decimal"
+    }
+  }
+}
